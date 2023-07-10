@@ -14,30 +14,36 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>vanilla weather app</title>
   </head>
   <body>
     <div class="container">
-      <h1>Mbabane</h1>
+      <h1 id="city">Mbabane</h1>
       <ul class="list">
         <li class="time">Saturday 9:00</li>
-        <li class="description">Sunny</li>
+        <li id="description"></li>
       </ul>
       <div class="row">
         <div class="col-md-6">
-          <img src="now image" alt="image" />
-          14 °C | °F
+          <div class="d-flex weather-temperature">
+            <img src="" alt="Clear" id="icon" />
+            <div>
+              <strong id="temperature"></strong><span class="units"> °C</span>
+            </div>
+          </div>
         </div>
         <div class="col-md-6">
           <ul>
-            <li>Precipitation : 0 %</li>
-            <li>Humidity: 41 %</li>
-            <li>Wind: 6 km/h</li>
+            <li>Precipitation :<span id="precipitation"></span> %</li>
+            <li>Humidity: <span id="Humidity"></span> %</li>
+            <li>Wind: <span id="wind"></span> km/h</li>
           </ul>
         </div>
       </div>
-      <small> Coded by Tholakele Mahlangu </small>
     </div>
+    <script src="index.js"></script>
   </body>
+  <footer><small> Coded by Tholakele Mahlangu </small></footer>
 </html>

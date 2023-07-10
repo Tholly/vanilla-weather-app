@@ -7,3 +7,9 @@ body {
 li {
   list-style: none;
 }
+h1 {
+  line-height: 28px;
+}
+#temperature {
+  font-size: 25px;
+}
