@@ -12,8 +12,8 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = response.data.wind.speed;
-  console.log(response.data.weather);
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  console.log(response.data.weather[0].description);
 }
 
 axios.get(apiUrl).then(displayTemperature);
