@@ -67,9 +67,7 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[today.getDay()];
-
   let hour = today.getHours();
-
   let minutes = today.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
