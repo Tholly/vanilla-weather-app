@@ -6,6 +6,7 @@ body {
   height: 300px;
   text-align: center;
 }
+
 li {
   list-style: none;
 }
@@ -14,5 +15,16 @@ h1 {
   padding: 10px;
 }
 #temperature {
-  font-size: 25px;
+  font-size: 30px;
+}
+#searchengine {
+  border-radius: 5px;
+  padding: 5px;
+}
+#searchbutton {
+  border-radius: 5px;
+  padding: 5px;
+}
+#icon {
+  size: 5px;
 }
