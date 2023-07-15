@@ -1,5 +1,5 @@
 function displayTemperature(response) {
-  let celseuisTemperature = Math.round(response.data.main.temp);
+  celseuisTemperature = Math.round(response.data.main.temp);
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = celseuisTemperature;
   let cityElement = document.querySelector("#city");
@@ -16,6 +16,8 @@ function displayTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${icon}@2x.png`
   );
+  let time = document.querySelector("#time");
+  time.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function search(city) {
@@ -40,6 +42,37 @@ function displayFahreinheit(event) {
   temperature.innerHTML = fareinheit;
 }
 
-let celseuisTemperature = null;
 let fahreinheiLink = document.querySelector("#fahreinheit");
 fahreinheiLink.addEventListener("click", displayFahreinheit);
+
+function displayCelsius(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = celseuisTemperature;
+}
+
+let celsuisLink = document.querySelector("#celsius");
+celsuisLink.addEventListener("click", displayCelsius);
+let celseuisTemperature = null;
+
+function formatDate(timestamp) {
+  let today = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[today.getDay()];
+
+  let hour = today.getHours();
+
+  let minutes = today.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day} ${hour}:${minutes}`;
+}
